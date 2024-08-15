@@ -1,0 +1,143 @@
+\starttext
+\setuppapersize[A4]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\setupbodyfont[12pt]
+\setupinterlinespace[line=3.66ex]
+\startbuffer[line]
+The quick brown fox jumps over\\
+\stopbuffer
+
+\define[1]\TitleLine{
+    \blank[5pt]
+    \framed[frame=off,align=flushleft,offset=3pt,strut=none,width=\textwidth,height=fit,background=color,backgroundcolor=gray]{{\switchtobodyfont[modern,ss,12pt] #1}}
+    \blank[5pt]
+}
+
+% % % ======================= 代码示例 - 1：字体
+\starttabulatehead
+\HL
+\NC {\bf Official Name} \NC {\bf Name in \Context} \NC {\bf Example} \NC\NR
+\HL
+\stoptabulatehead
+\starttabulate[format=|l|l|l|]
+\NC Latin Modern serif\NC modern,rm \NC \getbuffer[line] \NC\NR
+\NC Latin Modern sans \NC modern,ss \NC \switchtobodyfont[modern,ss]\getbuffer[line] \NC\NR
+\NC Latin Modern mono \NC modern,tt \NC \switchtobodyfont[modern,tt]\getbuffer[line] \NC\NR
+\NC DejaVu serif \NC dejavu \NC \switchtobodyfont[dejavu]\getbuffer[line] \NC\NR
+\NC DejaVu sans \NC dejavu,ss \NC \switchtobodyfont[dejavu,ss]\getbuffer[line] \NC\NR
+\NC DejaVu mono \NC dejavu,tt \NC \switchtobodyfont[dejavu,tt]\getbuffer[line] \NC\NR
+\NC TeX Gyre Adventor \NC adventor \NC \switchtobodyfont[adventor]\getbuffer[line] \NC\NR
+\NC TeX Gyre Bonum \NC bonum \NC \switchtobodyfont[bonum]\getbuffer[line] \NC\NR
+\NC TeX Gyre Chorus \NC chorus \NC \switchtobodyfont[chorus]\getbuffer[line] \NC\NR
+\NC TeX Gyre Cursor \NC cursor \NC \switchtobodyfont[cursor]\getbuffer[line] \NC\NR
+\NC TeX Gyre Heros \NC heros \NC \switchtobodyfont[heros]\getbuffer[line] \NC\NR
+\NC TeX Gyre Pagella \NC pagella \NC \switchtobodyfont[pagella]\getbuffer[line] \NC\NR
+\NC TeX Gyre Schola \NC schola \NC \switchtobodyfont[schola]\getbuffer[line] \NC\NR
+\NC TeX Gyre Termes \NC termes \NC \switchtobodyfont[termes]\getbuffer[line] \NC\NR
+\NC Gentium \NC gentium \NC \switchtobodyfont[gentium]\getbuffer[line] \NC\NR
+\NC Antykwa Toruńska \NC antykwa \NC \switchtobodyfont[antykwa]\getbuffer[line] \NC\NR
+\NC Antykwa Półtawskiego \NC antykwapoltawskiego \NC \switchtobodyfont[antykwapoltawskiego]\getbuffer[line] \NC\NR
+\NC Kurier \NC kurier,ss \NC \switchtobodyfont[kurier,ss]\getbuffer[line] \NC\NR
+\NC Iwona \NC iwona \NC \switchtobodyfont[iwona]\getbuffer[line] \NC\NR
+\NC ALM Fixed \NC almfixed,tt \NC \switchtobodyfont[almfixed,tt]\getbuffer[line] \NC\NR
+\NC STIX Two \NC stixtwo \NC \switchtobodyfont[stixtwo]\getbuffer[line] \NC\NR
+\NC Euler (for math) \NC eulernova \NC \switchtobodyfont[eulernova]$a+b=12$ \NC\NR
+\NC XITS (for math) \NC xits \NC \switchtobodyfont[xits]$a+b=12$ \NC\NR
+\HL
+\stoptabulate
+
+
+
+
+% % % ======================= 代码示例 - 2：字体风格和字体样式
+\page
+
+\ss
+\TitleLine{\type{\ss}}
+\type{normal}:\quad\getbuffer[line]
+\type{\bold}:\quad{\bold\getbuffer[line]}
+\type{\italic}:\quad{\italic\getbuffer[line]}
+\type{\bolditalic}:\quad{\bolditalic\getbuffer[line]}
+\type{\slanted}:\quad{\slanted\getbuffer[line]}
+\type{\boldslanted}:\quad{\boldslanted\getbuffer[line]}
+
+\rm
+\TitleLine{\type{\rm}}
+\type{normal}:\quad\getbuffer[line]
+\type{\bold}:\quad{\bold\getbuffer[line]}
+\type{\italic}:\quad{\italic\getbuffer[line]}
+\type{\bolditalic}:\quad{\bolditalic\getbuffer[line]}
+\type{\slanted}:\quad{\slanted\getbuffer[line]}
+\type{\boldslanted}:\quad{\boldslanted\getbuffer[line]}
+
+
+\tt
+\TitleLine{\type{\tt}}
+\type{normal}:\quad\getbuffer[line]
+\type{\bold}:\quad{\bold\getbuffer[line]}
+\type{\italic}:\quad{\italic\getbuffer[line]}
+\type{\bolditalic}:\quad{\bolditalic\getbuffer[line]}
+\type{\slanted}:\quad{\slanted\getbuffer[line]}
+\type{\boldslanted}:\quad{\boldslanted\getbuffer[line]}
+
+
+
+% % % ======================= 代码示例 - 3：字体大小
+\switchtobodyfont[modern,rm,12pt]
+
+{\tfxx \getbuffer[line]}
+{\tfx \getbuffer[line]}
+{\getbuffer[line]}
+{\tfa \getbuffer[line]}
+{\tfb \getbuffer[line]}
+{\tfc \getbuffer[line]}
+{\tfd \getbuffer[line]}
+
+% % % ======================= 代码示例 - 4：switchtobodyfont
+\page
+Before: \getbuffer[line]
+\TitleLine{\type{\switchtobodyfont[heros,16pt]}}
+\switchtobodyfont[heros,16pt] \getbuffer[line]
+% % % 
+\TitleLine{\type{\switchtobodyfont[schola]}}
+\switchtobodyfont[schola]\getbuffer[line]
+% % % 
+\TitleLine{\type{\switchtobodyfont[14pt]}}
+\switchtobodyfont[14pt]\getbuffer[line]
+% % % 
+\TitleLine{\type{\switchtobodyfont[modern,rm,12pt]}}
+\switchtobodyfont[modern,rm,12pt]\getbuffer[line]
+
+
+% % % ======================= 代码示例 - 5
+\TitleLine{\type{\ss\bf}}
+{\ss\bf \getbuffer[line]}
+% % % 
+\TitleLine{\type{\ss\it}}
+{\ss\it \getbuffer[line]}
+% % % 
+\TitleLine{\type{\mono}}
+{\mono \getbuffer[line]}
+% % % 
+\TitleLine{\type{\tt\tfb}}
+{\tt\tfb \getbuffer[line]}
+% % % 
+\TitleLine{\type{\tt\bfb}}
+{\tt\bfb \getbuffer[line]}
+
+% % % ======================= 代码示例 - 6：words
+\page
+\switchtobodyfont[12pt]
+{\capital \getbuffer[line]}
+{\word THE QUICK BROWN FOX JUMPS OVER\\}
+{\Word \getbuffer[line]}
+{\Words \getbuffer[line]}
+{\WORD \getbuffer[line]}
+
+
+
+
+
+\stoptext

@@ -1,0 +1,43 @@
+\starttypescript[sans][SiyuanHei]
+\definefontsynonym[syheiregular] [name:sourcehansanssc]
+\definefontsynonym[syheibold] [name:sourcehansansscbold]
+\stoptypescript
+
+\starttypescript[sans][SiyuanHei]
+\definefontsynonym[Sans] [syheiregular] [features=default]
+\definefontsynonym[SansBold] [syheibold] [features=default]
+\stoptypescript
+
+
+
+\starttypescript[serif][SiyuanSong]
+\definefontsynonym[sysongregular] [name:sourcehanserifsc]
+\definefontsynonym[sysongbold] [name:sourcehanserifscbold]
+\stoptypescript
+
+\starttypescript[serif][SiyuanSong]
+\definefontsynonym[Serif] [sysongregular] [features=default]
+\definefontsynonym[SerifBold] [sysongbold] [features=default]
+\stoptypescript
+
+
+
+\starttypescript[siyuan]
+\definetypeface[siyuan][rm][serif][SiyuanSong][default]
+\definetypeface[siyuan][ss][sans][SiyuanHei][default]
+\stoptypescript
+
+
+\usetypescript[siyuan]
+\setupbodyfont[siyuan,12pt]
+
+\starttext
+
+
+{\rm 人之初，性本善。性相近，习相远。\\
+\bf 苟不教，性乃迁。教之道，贵以专。\\}
+{\ss 人之初，性本善。性相近，习相远。\\
+\bf 苟不教，性乃迁。教之道，贵以专。\\}
+
+
+\stoptext

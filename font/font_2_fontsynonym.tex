@@ -1,0 +1,30 @@
+\starttypescript[serif][SiyuanSong]
+\definefontsynonym[sysongregular] [file:SourceHanSerifSC-Regular]
+\definefontsynonym[sysongbold] [file:SourceHanSerifSC-Bold]
+\stoptypescript
+
+\starttypescript[serif][SiyuanSong]
+\definefontsynonym[Serif] [sysongregular] [features=default]
+\definefontsynonym[SerifBold] [sysongbold] [features=default]
+\stoptypescript
+
+
+\starttypescript[mySong]
+\definetypeface[mySong][rm][serif][SiyuanSong][default]
+\stoptypescript
+
+
+% % % =======================================================
+\starttext
+
+
+\usetypescript[mySong]
+\setupbodyfont[mySong,12pt]
+ 
+人之初，性本善。性相近，习相远。\\
+{\bold 苟不教，性乃迁。教之道，贵以专。\\}
+\switchtobodyfont[20pt]
+昔孟母，择邻处。子不学，断机杼。
+
+
+\stoptext

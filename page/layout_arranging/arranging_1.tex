@@ -1,0 +1,58 @@
+\startbuffer[DemoPage]
+    \hfill
+    \vfill    
+    \midaligned{\bold{\pagenumber}}
+    \vfill
+    \hfill
+\stopbuffer
+
+
+\setupbodyfont[ss,60pt]
+\setuplayout [margin=0pt, width=fit]
+\setuppagenumbering [alternative=doublesided,location=]
+\showframe
+\setuplayout [location=middle,marking=on]
+
+
+\setuppapersize[A7][A3,landscape] 
+\setuparranging [2*8]
+
+\starttext
+    \dorecurse{16}{\getbuffer[DemoPage]\page}
+\stoptext
+
+
+% \def\Schema{2*4}
+
+% \setuppapersize[A9,landscape][A7,landscape] 
+
+% % the schema being tested
+% \setuparranging [\Schema] 
+
+% % Visuals
+% \setupbodyfont[ss,10pt]
+
+% \setuplayout [margin=0pt, width=fit, header=2.8ex, footer=2.8ex]
+% \setupalign[middle,hilo]
+% \setuppagenumbering [alternative=doublesided,location=footer]
+% \setupheadertexts[\CONTEXT\ imposition test]
+
+% \showframe
+% \setupbackgrounds [text][text][background=color,backgroundcolor=lightgray] 
+
+% % Where the block of pages is placed on the sheet 
+% % (relevant if there is space left over.)
+% \setuplayout [location=middle,marking=on]
+
+% \startbuffer[Fakepage]
+%     \strut
+%     \blank
+%     \bold{[\Schema]}
+%     \vfill
+%     This is page \recurselevel
+%     \vfill
+% \stopbuffer
+
+% \starttext
+%     \dorecurse{16}{\getbuffer[Fakepage]\page}
+% \stoptext

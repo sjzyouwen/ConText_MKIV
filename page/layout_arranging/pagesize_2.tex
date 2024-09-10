@@ -1,0 +1,22 @@
+\setuppagenumbering [alternative=doublesided,location=]
+\setupbodyfont[ss,150pt]
+\startbuffer[DemoPage]
+    \hfill
+    \midaligned{\bold{\pagenumber}}
+    \hfill
+\stopbuffer
+
+
+\definepapersize[Portrait] [A4]
+\definepapersize[Landscape][A4,landscape]
+
+
+\starttext
+\setuppapersize[Portrait]
+\getbuffer[DemoPage] \page
+\getbuffer[DemoPage] \page
+
+\page\adaptpapersize[Landscape]
+\getbuffer[DemoPage] \page
+\getbuffer[DemoPage] \page
+\stoptext

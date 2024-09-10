@@ -1,0 +1,23 @@
+\startbuffer[DemoPage]
+    \hfill
+    \vfill    
+    \midaligned{\bold{\pagenumber}}
+    \vfill
+    \hfill
+\stopbuffer
+
+\setupbodyfont[ss,30pt]
+\setuplayout [margin=0pt, width=fit]
+\setuppagenumbering [alternative=doublesided,location=]
+\showframe
+\setuplayout [location=middle,marking=on]
+
+
+\setuppapersize[A9][A6,landscape]
+\setuppaper[nx=3, ny=2]
+\setuparranging [XY] 
+
+\starttext
+    \dorecurse{12}{\getbuffer[DemoPage]\page}
+\stoptext
+

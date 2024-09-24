@@ -1,0 +1,25 @@
+\usemodule[visual]
+
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+
+\starttext
+
+
+\defineparagraphs[TwoCol][n=2]
+\setupparagraphs[TwoCol][rule=on, top=\blank[10pt]]
+\setupparagraphs[TwoCol][1][width=.66\textwidth]
+
+
+\fakewords{100}{130}\par
+
+\startTwoCol
+\fakewords{70}{90}\par
+\TwoCol
+\fakewords{50}{70}\par
+\stopTwoCol
+
+\fakewords{100}{130}\par
+
+\stoptext

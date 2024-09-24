@@ -1,0 +1,13 @@
+\usemodule[visual]
+
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+
+\starttext
+
+\startcolumnset[nright=2,nleft=3]
+\dorecurse{10}{\fakewords{170}{180}\par}
+\stopcolumnset
+
+\stoptext

@@ -1,0 +1,19 @@
+\usemodule[visual]
+
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setuplayout[header=1cm,footer=1cm,topspace=1cm,bottomspace=1cm]
+\setuppagenumbering [location=]
+
+
+
+\setupheadertexts[margin][左边][右边]
+\starttext
+    \fakewords{20}{30}
+\stoptext

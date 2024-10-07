@@ -1,0 +1,21 @@
+\usemodule[visual]
+
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setuplayout[header=1cm,footer=1cm,topspace=1cm,bottomspace=1cm]
+\setuppagenumbering [alternative=doublesided,location=]
+
+
+
+\setupheadertexts[奇数页左边][奇数页右边][偶数页左边][偶数页左边]
+\starttext
+    页面 1 - 奇数页 \par\fakewords{20}{30} 
+    \page
+    页面 2 - 偶数页 \par\fakewords{20}{30}
+\stoptext

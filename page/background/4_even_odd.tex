@@ -1,0 +1,33 @@
+% % % 单双页不同背景
+
+\usemodule[visual]
+
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[alternative=doublesided,location={header,right},style=\bfb]
+
+\defineoverlay[WatermarkOverlay_R]
+              [{\framed[frame=off,foregroundcolor=gray]
+               {\scale[sx=15,sy=15]
+               {\rotate[rotation=45]{单页}}}}]
+\defineoverlay[WatermarkOverlay_L]
+              [{\framed[frame=off,foregroundcolor=gray]
+               {\scale[sx=15,sy=15]
+               {\rotate[rotation=45]{双页}}}}]
+
+\setupbackgrounds[rightpage][background=WatermarkOverlay_R]
+\setupbackgrounds[leftpage][background=WatermarkOverlay_L]
+
+
+\starttext
+\fakewords{20}{30}\page
+\fakewords{20}{30}
+\stoptext

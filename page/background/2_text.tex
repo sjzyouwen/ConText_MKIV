@@ -1,0 +1,40 @@
+% % % 文字背景
+\usemodule[visual]
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+
+
+\defineoverlay[WatermarkOverlay]
+              [{\framed[frame=off,foregroundcolor=gray]
+               {\scale[sx=15,sy=15]
+               {\rotate[rotation=45]{草稿}}}}]
+
+\setupbackgrounds[page][background=WatermarkOverlay]
+
+
+% \definelayer[WatermarkLayer]
+%     [x=0mm, y=0mm,
+%      width=\paperwidth, height=\paperheight,
+%      ]
+% \setlayer[WatermarkLayer]
+%     [hoffset=0.5cm, voffset=0.5cm]
+%     {\framed[frame=on, width=10cm, height=3cm]{\kaiti 草稿}}
+
+% \setupbackgrounds[page][background=WatermarkLayer]
+% \defineoverlay[WatermarkOverlay]
+%               [{\framed[frame=off,foregroundcolor=gray]
+%                {\scale[sx=12,sy=12]
+%                {\rotate[rotation=45]{草稿}}}}]
+
+
+\starttext
+\fakewords{20}{30}
+\page
+\fakewords{20}{30}
+\stoptext

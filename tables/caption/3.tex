@@ -1,0 +1,81 @@
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setupinterlinespace[line=3.66ex] %line=3.05ex相当于WORD 中的1.0倍行距, 3.66ex相当于WORD 中的1.2倍行距
+
+\setuppapersize[A4]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\define[1]\exampleLine{
+    \blank[10pt]
+    \framed[frame=off,align=flushleft,offset=3pt,strut=none,width=\textwidth,height=fit,background=color,backgroundcolor=gray]{{\bfx #1}}
+    \blank[5pt]
+}
+
+% \setupcaptions[way=bytext, prefixsegments=none,numberconversion=n]
+
+\startbuffer[fruits]
+\starttabulatehead
+\HL
+\NC 年份 \NC 产品 \NC 销量 \NC\NR
+\HL
+\stoptabulatehead
+\starttabulate[format=|c|c|c|]
+\NC 2021 \NC 柚子 \NC 4500 \NC\NR
+\NC 2022 \NC 水蜜桃 \NC 480 \NC\NR
+\NC 2023 \NC 柠檬 \NC 50 \NC\NR
+\NC 2024 \NC 蓝莓 \NC 930 \NC\NR
+\HL
+\stoptabulate
+\stopbuffer
+
+
+\starttext
+\setuphead[chapter][page=no]
+
+\chapter{章模拟}
+
+\section{节模拟}
+\placetable[here]{表题}{\getbuffer[fruits]}
+% \placetable[here]{表题}{\getbuffer[fruits]}
+
+\chapter{章模拟}
+\section{节模拟}
+\placetable[here]{表题}{\getbuffer[fruits]}
+% \placetable[here]{表题}{\getbuffer[fruits]}
+
+% % % ================== 代码示例 - 3
+\subsection{prefix* 参数}
+
+\defineconversionset[MyConversionSet][n,A,a,i][n]
+\setupcaptions[prefixsegments=2:*,prefixconversionset=MyConversionSet,prefixconnector=-]
+
+\exampleLine{代码示例 - 3:}
+\placetable[here]{表题}{\getbuffer[fruits]}
+
+
+% % % ================== 代码示例 - 4
+
+\subsection{number* 参数}
+
+\setupcaptions[prefixsegments=2,prefixconversionset=,prefixconnector=.]
+\setupcaptions[numberstopper={:},numberconversion=a]
+
+\exampleLine{代码示例 - 4:}
+\placetable[here]{表题}{\getbuffer[fruits]}
+
+
+% % % ================== 代码示例 - 5
+
+\subsection{way=bytext}
+% 请在图表开始前执行，不然影响效果
+% \setupcaptions[way=bytext, prefixsegments=none,numberconversion=n]
+\exampleLine{代码示例 - 5:}
+\placetable[here]{表题}{\getbuffer[fruits]}
+\stoptext

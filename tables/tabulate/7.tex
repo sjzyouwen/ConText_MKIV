@@ -1,0 +1,212 @@
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setupinterlinespace[line=3.66ex] %line=3.05ex相当于WORD 中的1.0倍行距, 3.66ex相当于WORD 中的1.2倍行距
+
+\setuppapersize[A4,landscape]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+
+\setuplabeltext[cn][table={表~7.}]
+% % % ================== 代码示例 - 7
+\starttext
+
+\startplacetable [location={here,none}]     % disable numbering of outer float
+  \startfloatcombination [nx=4,ny=3]
+    % % % === 表 - 7.1 - 单元格竖线颜色
+    \startplacetable [title=\type{\VL[color]}]
+        \starttabulatehead
+            \HL
+            \NC 年份\VL[green] 产品\VL[blue] 销量\NC \NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|l|l|l|]
+            \NC 2022 \NC 柚子 \NC 480 \NC\NR\HL
+            \NC 2023 \NC 柠檬 \NC 1250 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+    % % % === 表 - 7.2 - 横线颜色
+    \startplacetable [title=\type{\HL[color]}]
+        \starttabulatehead
+            \HL
+            \NC 年份 \NC 产品 \NC 销量 \NC\NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|l|l|l|]
+            \NC 2022 \NC 柚子 \NC 480 \NC\NR\HL[orange]
+            \NC 2023 \NC 柠檬 \NC 1250 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+    % % % === 表 - 7.3 - 文字颜色
+    \startplacetable [title=\type{\color{text}}]
+        \starttabulatehead
+            \HL
+            \NC 年份 \NC 产品 \NC 销量 \NC\NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|l|l|l|]
+            \NC 2022 \NC 柚子 \NC 480 \NC\NR\HL
+            \NC 2023 \NC \yellow{柠檬} \NC 1250 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+
+    % % % === 表 - 7.4 - 文字颜色
+    \startplacetable [title=\type{|l|lCT{color}|l|}]
+        \starttabulatehead
+            \HL
+            \NC 年份 \NC 产品 \NC 销量 \NC\NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|l|lCT{yellow}|l|]
+            \NC 2022 \NC 柚子 \NC 480 \NC\NR\HL
+            \NC 2023 \NC 柠檬 \NC 1250 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+
+    % % % === 表 - 7.5 - 文字背景色
+    \startplacetable [title=\type{\CC[color]}]
+        \starttabulatehead
+            \HL
+            \NC 年份 \NC 产品 \NC 销量 \NC\NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|l|l|l|]
+            \NC 2022 \NC 柚子 \NC 480 \NC\NR
+            \NC 2023 \CC[yellow] 柠檬 \NC 1250 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+
+    % % % === 表 - 7.6 - 文字背景色
+    \startplacetable [title=\type{|l|lCC{color}|l|}]
+        \starttabulatehead
+            \HL
+            \NC 年份 \NC 产品 \NC 销量 \NC\NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|l|lCC{yellow}|l|]
+            \NC 2022 \NC 柚子 \NC 480 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 1250 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+
+    % % % === 表 - 7.7 - 整个单元格区域颜色
+    \startplacetable [title=\type{\CM[color]}]
+        \starttabulatehead
+            \HL
+            \NC 年份 \NC 产品 \NC 销量 \NC\NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|l|l|l|]
+            \NC 2022 \NC 柚子 \NC 480 \NC\NR
+            \NC 2023 \CM[yellow] 柠檬 \NC 1250 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+
+    % % % === 表 - 7.8 - 整个单元格区域颜色
+    \startplacetable [title=\type{|l|lCM{color}|l|}]
+        \starttabulatehead
+            \HL
+            \NC 年份 \NC 产品 \NC 销量 \NC\NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|l|lCM{yellow}|l|]
+            \NC 2022 \NC 柚子 \NC 480 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 1250 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+    % % % === 表 - 7.9 - 文字背景色和左边空白区域颜色
+    \startplacetable [title=\type{\CL[color]}]
+        \starttabulatehead
+            \HL
+            \NC 年份 \NC 产品 \NC 销量 \NC\NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|l|l|l|]
+            \NC 2022 \NC 柚子 \NC 480 \NC\NR
+            \NC 2023 \CL[yellow] 柠檬 \NC 1250 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+
+    % % % === 表 - 7.10 - 文字背景色和左边空白区域颜色
+    \startplacetable [title=\type{|l|lCL{color}|l|}]
+        \starttabulatehead
+            \HL
+            \NC 年份 \NC 产品 \NC 销量 \NC\NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|l|lCL{yellow}|l|]
+            \NC 2022 \NC 柚子 \NC 480 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 1250 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+    % % % === 表 - 7.11 - 文字背景色和右边空白区域颜色
+    \startplacetable [title=\type{\CR[color]}]
+        \starttabulatehead
+            \HL
+            \NC 年份 \NC 产品 \NC 销量 \NC\NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|l|l|l|]
+            \NC 2022 \NC 柚子 \NC 480 \NC\NR
+            \NC 2023 \CR[yellow] 柠檬 \NC 1250 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+    % % % === 表 - 7.12 - 文字背景色和右边空白区域颜色
+    \startplacetable [title=\type{|l|lCR{color}|l|}]
+        \starttabulatehead
+            \HL
+            \NC 年份 \NC 产品 \NC 销量 \NC\NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|l|lCR{yellow}|l|]
+            \NC 2022 \NC 柚子 \NC 480 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 1250 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+\stopfloatcombination
+\stopplacetable
+
+
+
+\stoptext

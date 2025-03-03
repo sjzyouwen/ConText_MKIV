@@ -1,0 +1,36 @@
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setupinterlinespace[line=3.66ex] %line=3.05ex相当于WORD 中的1.0倍行距, 3.66ex相当于WORD 中的1.2倍行距
+
+\setuppapersize[A4]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\setupcounter[table][number=3]
+
+\starttext
+
+
+\placetable[here]{}
+{
+\starttabulatehead
+\HL
+\NC 年份 \VL 月份 \VL 产品 \VL 销量 \VL 评分 \NC\NR
+\HL
+\stoptabulatehead
+\starttabulate[format=|c|c|c|c|c|]
+\HL
+\NC 2021 \VL 1 \VL 柚子 \VL 4500 \VL 4.5 \NC\NR \HL
+\NC 2022 \VL 2 \VL 水蜜桃 \VL 480 \VL 4.5 \NC\NR \HL
+\NC 2023 \NS[1][c] 柠檬  \VL 480 \VL 4.5 \NC\NR \HL
+\NC 2024 \VL 4 \VL 蓝莓 \VL 930  \VL 4.5 \NC\NR \HL
+\stoptabulate
+}
+
+\stoptext

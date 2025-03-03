@@ -1,0 +1,30 @@
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setupinterlinespace[line=4.575ex] %line=3.05ex相当于WORD 中的1.0倍行距, 4.575ex相当于WORD 中的1.5倍行距
+
+\setuppapersize[A4]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+
+\starttext
+
+\definebar
+[mybar]
+[text=\lower\exheight\hbox{\darkred \infofont +},
+repeat=yes]
+
+\definebar
+[myotherbar]
+[text=\lower 2.5\exheight\hbox{\darkgreen $\diamond$},
+repeat=yes]
+
+\mybar{人之初，性本善。性相近，习相远。}\quad
+\myotherbar{苟不教，性乃迁。教之道，贵以专。}\\
+\stoptext

@@ -1,0 +1,46 @@
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setupinterlinespace[line=3.66ex] %line=3.05ex相当于WORD 中的1.0倍行距, 3.66ex相当于WORD 中的1.2倍行距
+
+\setuppapersize[A4]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\define[1]\exampleLine{
+    \blank[5pt]
+    \framed[frame=off,align=flushleft,offset=3pt,strut=none,width=\textwidth,height=fit,background=color,backgroundcolor=gray]{{\bfx #1}}
+    \blank[5pt]
+}
+
+\starttext
+
+\exampleLine{代码示例 - 4:}
+
+\define[1]\colorEnum{\darkgreen{#1}}
+\defineenumeration[question]
+\setupenumeration[question][alternative=top,left=第,right=题,text=大题,title=yes,inbetween={\blank[none]},after=\blank]
+\setupenumeration[subquestion][alternative=serried,width=fit,text=小题,color=darkblue,margin=10mm,headcommand=\colorEnum]
+
+\startquestion[title={共十分}] 地理常识题.
+\stopquestion
+
+\startsubquestion
+河北省会是？
+\stopsubquestion
+\startsubquestion
+安徽省会是？
+\stopsubquestion
+\nextsubquestion
+\startsubquestion
+河南省会是？
+\stopsubquestion 
+
+
+
+\stoptext

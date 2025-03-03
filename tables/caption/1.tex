@@ -1,0 +1,39 @@
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setupinterlinespace[line=3.66ex] %line=3.05ex相当于WORD 中的1.0倍行距, 3.66ex相当于WORD 中的1.2倍行距
+
+\setuppapersize[A4]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+
+\startbuffer[fruits]
+\starttabulatehead
+\HL
+\NC 年份 \NC 产品 \NC 销量 \NC\NR
+\HL
+\stoptabulatehead
+\starttabulate[format=|c|c|c|]
+\NC 2021 \NC 柚子 \NC 4500 \NC\NR
+\NC 2022 \NC 水蜜桃 \NC 480 \NC\NR
+\NC 2023 \NC 柠檬 \NC 50 \NC\NR
+\NC 2024 \NC 蓝莓 \NC 930 \NC\NR
+\HL
+\stoptabulate
+\stopbuffer
+
+
+\starttext
+
+\setupcaptions[location=top]
+
+\placetable[here]{表题}{\getbuffer[fruits]}
+
+
+\stoptext

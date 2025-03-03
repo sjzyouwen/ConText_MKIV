@@ -1,0 +1,37 @@
+\usemodule[visual]
+
+\setuppapersize[B5]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\setupinteraction[state=start,color=black]
+
+\starttext
+
+\placecontent
+
+\page
+\setuphead[chapter][page=no]
+\setuphead[section][page=no,conversion=A,sectionsegments=3]
+\setuphead[subsection][page=no,conversion=i,sectionsegments=4]
+
+\chapter[chapter1]{Chapter 1}
+\section{Section 1}
+\subsection{Sub 1}
+\fakewords{10}{20}
+\subsection{Sub 2}
+\fakewords{30}{40}
+\section{Section 2}
+\fakewords{10}{30}
+\subsection{Sub 1}
+\fakewords{10}{30}
+\chapter[chapter2]{Chapter 2}
+\section{Section 1}
+\fakewords{30}{50}
+\section{Section 2}
+\fakewords{20}{50}
+
+
+
+
+\stoptext

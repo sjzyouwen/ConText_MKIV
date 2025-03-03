@@ -1,0 +1,70 @@
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setupinterlinespace[line=3.66ex] %line=3.05ex相当于WORD 中的1.0倍行距, 3.66ex相当于WORD 中的1.2倍行距
+
+
+\setuppapersize[A4]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\setupcounter[table][number=6]
+
+
+\starttext
+
+
+\startplacetable []
+{
+\startuseMPgraphic{DiagonalRule}
+  rulethickness := \frameddimension{rulethickness};
+
+  drawoptions(
+    withpen pencircle scaled rulethickness
+    withcolor \MPcolor{\framedparameter{framecolor}});
+
+  pair leftcorner, rightcorner;
+  leftcorner  := (rulethickness, \overlayheight-rulethickness);
+  rightcorner := (\overlaywidth-rulethickness, rulethickness);
+
+  draw leftcorner -- rightcorner;
+\stopuseMPgraphic
+
+\defineoverlay  [DiagonalRule]  [\useMPgraphic{DiagonalRule}]
+
+\define[2]\DiagonalLabel{
+  \setuptabulate [after={\blank[\frameddimension{offset}]}]
+  \starttabulate [|p|r|]
+    \NC    \NC #2 \NC\NR
+    \NC #1 \NC    \NC\NR
+  \stoptabulate
+}
+
+  \setupTABLE[column][each][align={middle,lohi}]
+  \bTABLE
+    \bTABLEhead
+    \bTR \bTH[width=3cm,background=DiagonalRule]  \DiagonalLabel{超市}{产品} \eTH   \bTH  柚子 \eTH   \bTH  水蜜桃 \eTH \eTR
+    \eTABLEhead
+    \bTABLEbody
+        \bTR
+        \bTD 祥泰隆 \eTD
+        \bTD 4500  \eTD
+        \bTD 480 \eTD
+        \eTR
+        \bTR
+        \bTD 欧德亚 \eTD
+        \bTD 4200  \eTD
+        \bTD 1080 \eTD
+        \eTR
+    \eTABLEbody
+    \eTABLE
+}
+\stopplacetable
+
+
+\stoptext

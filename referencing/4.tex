@@ -1,0 +1,46 @@
+\usemodule[visual]
+
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setupinterlinespace[line=3.66ex] %line=3.05ex相当于WORD 中的1.0倍行距, 3.66ex相当于WORD 中的1.2倍行距
+
+\setuppapersize[A4]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\define[1]\exampleLine{
+    \blank[10pt]
+    \framed[frame=off,align=flushleft,offset=3pt,strut=none,width=\textwidth,height=fit,background=color,backgroundcolor=gray]{{\bfx #1}}
+    \blank[5pt]
+}
+\setupinteraction[state=start]
+
+\starttext
+
+\exampleLine{代码示例 - 4.1 useURL+from :}
+\useURL[wiki][https://www.contextgarden.net/URL][][context wiki-URL]
+\from[wiki]
+
+% % % ===== 代码示例 - 4.2
+\exampleLine{代码示例 - 4.2 goto :}
+\goto {context wiki-URL}[url(https://www.contextgarden.net/URL)]
+\blank[10pt]
+% % % ===== 代码示例 - 4.3
+\exampleLine{代码示例 - 4.3 goto + asciimode :}
+\startasciimode
+    \goto {context wiki-URL}[url(https://www.contextgarden.net/URL#:~:text=client.%0A%5Cstoptext-,Many%20Different%20Hyperrefs,-If%20you%20need)]
+\stopasciimode
+\blank[10pt]
+% % % ===== 代码示例 - 4.4
+\exampleLine{代码示例 - 4.4 goto + letter转换 :}
+\goto {context wiki-URL}[url(https://www.contextgarden.net/URL\letterhash:~:text=with\letterpercent20hyphenated\letterpercent20URLs.-,Hyphenated\letterpercent20URLs,-URLs\letterpercent20tend\letterpercent20to)]
+\blank[10pt]
+
+
+\stoptext

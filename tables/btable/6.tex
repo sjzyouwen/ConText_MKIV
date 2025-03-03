@@ -1,0 +1,40 @@
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setupinterlinespace[line=3.66ex] %line=3.05ex相当于WORD 中的1.0倍行距, 3.66ex相当于WORD 中的1.2倍行距
+
+
+\setuppapersize[A4]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\setupcounter[table][number=5]
+
+
+\starttext
+
+
+\startplacetable []
+{
+\setupTABLE[column][each][align=middle,width=2cm]
+\bTABLE
+\bTABLEhead
+\bTR \bTH  超市 \eTH   \bTH  产品 \eTH   \bTH  销量 \eTH \eTR
+\eTABLEhead
+\bTABLEbody
+\bTR \bTD[nr=2]祥泰隆 \eTD   \bTD 柚子 \eTD \bTD 4500 \eTD \eTR
+\bTR                        \bTD 水蜜桃 \eTD \bTD 480 \eTD \eTR
+\bTR \bTD[nr=2] 欧德亚 \eTD  \bTD 柠檬 \eTD \bTD 50 \eTD \eTR
+\bTR                        \bTD 蓝莓 \eTD \bTD 930 \eTD \eTR
+\bTR[background=color,backgroundcolor=darkgray,foregroundcolor=white] \bTD[nc=3,align=flushright] 总计：5960 \eTD \eTR
+\eTABLEbody
+\eTABLE
+}
+\stopplacetable
+
+\stoptext

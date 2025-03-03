@@ -1,0 +1,227 @@
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setupinterlinespace[line=3.66ex] %line=3.05ex相当于WORD 中的1.0倍行距, 3.66ex相当于WORD 中的1.2倍行距
+
+\setuppapersize[A4,landscape]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\setuplabeltext[cn][table={表~2.}]
+% % % ================== 代码示例 - 2
+\starttext
+
+\startplacetable [location={here,none}]     % disable numbering of outer float
+  \startfloatcombination [nx=3,ny=3]
+    % % % === 表 - 2.1 - 对齐方式
+    \startplacetable [title=\type{|c|l|r|}]
+        \starttabulatehead
+            \HL
+            \NC 年份\VL 产品\VL 销量\NC \NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|c|l|r|]
+            \NC 2021 \NC 柚子 \NC 4500 \NC\NR
+            \NC 2022 \NC 水蜜桃 \NC 480 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 50 \NC\NR
+            \NC 2024 \NC 蓝莓 \NC 930 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+
+    % % % === 表 - 2.2 - 在文字前加内容
+    \startplacetable [title=\type{b{Year }}]
+        \starttabulatehead
+            \HL
+            \NC 年份\VL 产品\VL 销量\NC \NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|cb{Year }|c|c|]
+            \NC 2021 \NC 柚子 \NC 4500 \NC\NR
+            \NC 2022 \NC 水蜜桃 \NC 480 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 50 \NC\NR
+            \NC 2024 \NC 蓝莓 \NC 930 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+
+     % % % === 表 - 2.3 - 在文字后加内容
+    \startplacetable [title=\type{a{(kg)}}]
+        \starttabulatehead
+            \HL
+            \NC 年份\VL 产品\VL 销量\NC \NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|c|c|ca{(kg)}|]
+            \NC 2021 \NC 柚子 \NC 4500 \NC\NR
+            \NC 2022 \NC 水蜜桃 \NC 480 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 50 \NC\NR
+            \NC 2024 \NC 蓝莓 \NC 930 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+
+
+    
+
+    % % % === 表 - 2.4 - 列左侧加3倍空白
+    \startplacetable [title=i3]
+        \starttabulatehead
+            \HL
+            \NC 年份\VL 产品\VL 销量\NC \NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|ci3|c|c|]
+            \NC 2021 \NC 柚子 \NC 4500 \NC\NR
+            \NC 2022 \NC 水蜜桃 \NC 480 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 50 \NC\NR
+            \NC 2024 \NC 蓝莓 \NC 930 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+
+
+
+
+
+% % % === 表 - 2.5 - 列左右侧各加3倍空白
+    \startplacetable [title=k3]
+        \starttabulatehead
+            \HL
+            \NC 年份\VL 产品\VL 销量\NC \NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|ck3|c|c|]
+            \NC 2021 \NC 柚子 \NC 4500 \NC\NR
+            \NC 2022 \NC 水蜜桃 \NC 480 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 50 \NC\NR
+            \NC 2024 \NC 蓝莓 \NC 930 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+% % % === 表 - 2.6 - 列右侧加3倍空白
+    \startplacetable [title=cj3]
+        \starttabulatehead
+            \HL
+            \NC 年份\VL 产品\VL 销量\NC \NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|cj3|c|c|]
+            \NC 2021 \NC 柚子 \NC 4500 \NC\NR
+            \NC 2022 \NC 水蜜桃 \NC 480 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 50 \NC\NR
+            \NC 2024 \NC 蓝莓 \NC 930 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+% % % === 表 - 2.7 - 列宽设置固定值
+    \startplacetable [title=w(2cm)]
+        \starttabulatehead
+            \HL
+            \NC 年份\VL 产品\VL 销量\NC \NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|cw(2cm)|c|c|]
+            \NC 2021 \NC 柚子 \NC 4500 \NC\NR
+            \NC 2022 \NC 水蜜桃 \NC 480 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 50 \NC\NR
+            \NC 2024 \NC 蓝莓 \NC 930 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+    % % % === 表 - 2.8 - 列内元素以X对齐
+    \startplacetable [title=\type{cg{.}}]
+        \starttabulatehead
+            \HL
+            \NC 年份\VL 产品\VL 销量\NC \NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|c|c|cg{.}|]
+            \NC 2021 \NC 柚子 \NC 450.3 \NC\NR
+            \NC 2022 \NC 水蜜桃 \NC 480.25 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 1250 \NC\NR
+            \NC 2024 \NC 蓝莓 \NC 93.09 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+
+ % % % === 表 - 2.9 - 文字加粗 斜体
+    \startplacetable [title=B I]
+        \starttabulatehead
+            \HL
+            \NC 年份\VL 产品\VL 销量\NC \NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|cB|c|cI|]
+            \NC 2021 \NC 柚子 \NC 450 \NC\NR
+            \NC 2022 \NC 水蜜桃 \NC 480 \NC\NR
+            \NC 2023 \NC 柠檬 \NC 1250 \NC\NR
+            \NC 2024 \NC 蓝莓 \NC 93 \NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+\stopfloatcombination
+\stopplacetable
+
+
+
+\startplacetable [location={here,none}]     % disable numbering of outer float
+  \startfloatcombination [nx=1,ny=2]
+
+    % % % === 表 - 2.10 - 多行内容，以段落显示
+
+        \startplacetable [title=without p ]
+        \starttabulatehead
+            \HL
+            \NC 年份\VL 产品\VL 销量\VL 信息\NC \NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|c|c|c|cw(7cm)|]
+            \TB[line]
+            \NC 2021 \NC 柚子 \NC 450 \NC 红柚和普通柚子的总和销量，具体产品销量见表2 \NC\NR
+            \TB[line]
+            \NC 2022 \NC 水蜜桃 \NC 600 \NC 阳山水蜜桃很受欢迎，供应商的桃子品质也好。明年可以继续和这加供应商合作。\NC\NR       
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+
+    \startplacetable [title=p]
+        \starttabulatehead
+            \HL
+            \NC 年份\VL 产品\VL 销量\VL 信息\NC \NR
+            \HL
+        \stoptabulatehead
+        \starttabulate[format=|c|c|c|p(7cm)|]
+            \TB[line]
+            \NC 2021 \NC 柚子 \NC 450 \NC 红柚和普通柚子的总和销量，具体产品销量见表2 \NC\NR
+            \TB[line]
+            \NC 2022 \NC 水蜜桃 \NC 600 \NC 阳山水蜜桃很受欢迎，供应商的桃子品质也好。明年可以继续和这加供应商合作。\NC\NR
+            \HL
+        \stoptabulate
+    \stopplacetable
+
+\stopfloatcombination
+\stopplacetable
+
+\stoptext

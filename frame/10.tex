@@ -1,0 +1,31 @@
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setupinterlinespace[line=3.66ex] %line=3.05ex相当于WORD 中的1.0倍行距, 3.66ex相当于WORD 中的1.2倍行距
+
+\setuppapersize[A4]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\define[1]\exampleLine{
+    \blank[10pt]
+    \framed[frame=off,align=flushleft,offset=3pt,strut=none,width=\textwidth,height=fit,background=color,backgroundcolor=gray]{{\bfx #1}}
+    \blank[5pt]
+}
+\starttext
+
+\exampleLine{代码示例 - 10:}
+
+\defineframed[myframe][frame=on,rulethickness=3pt,width=2cm,height=2cm,background=color,backgroundcolor=green]
+\hbox{
+{\myframe{ABC}} \quad
+{\myframe[frame=off]{ABC}} \quad
+}
+
+
+\stoptext

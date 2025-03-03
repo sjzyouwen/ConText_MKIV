@@ -1,0 +1,44 @@
+\setscript[hanzi]
+\setupalign[hanging, hz]
+
+\usemodule[zhfontsext]
+\usetypescript[cnfontb]
+\setupbodyfont[cnfontb,rm,12pt] % 小四号 = 12pt
+\mainlanguage[cn]
+
+\setupinterlinespace[line=3.66ex] %line=3.05ex相当于WORD 中的1.0倍行距, 3.66ex相当于WORD 中的1.2倍行距
+
+
+\setuppapersize[A4]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\setupcounter[table][number=6]
+
+
+\starttext
+
+\startplacetable []
+{
+\startxtable
+\startxtablehead
+\startxrow
+  \startxcell[width=5em]  超市 \stopxcell
+  \startxcell[width=5em]  产品 \stopxcell
+  \startxcell[width=5em]  销量 \stopxcell
+\stopxrow
+\stopxtablehead
+
+\startxtablebody
+\startxrow \startxcell[nr=2]祥泰隆 \stopxcell   \startxcell 柚子 \stopxcell \startxcell 4500 \stopxcell \stopxrow
+\startxrow                        \startxcell 水蜜桃 \stopxcell \startxcell 480 \stopxcell \stopxrow
+\startxrow \startxcell[nr=2] 欧德亚 \stopxcell  \startxcell 柠檬 \stopxcell \startxcell 50 \stopxcell \stopxrow
+\startxrow                        \startxcell 蓝莓 \stopxcell \startxcell 930 \stopxcell \stopxrow
+\startxrow[background=color,backgroundcolor=darkgray,foregroundcolor=white] \startxcell[nc=3,align=flushright] 总计：5960 \stopxcell \stopxrow
+\stopxtablebody
+\stopxtable
+}
+\stopplacetable
+
+
+\stoptext

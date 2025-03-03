@@ -1,0 +1,17 @@
+\usemodule[visual]
+
+
+
+\definelayer[behind][repeat=yes]
+\definelayer[before]
+
+\setlayer[behind][x=-2cm,y=.75ex]{\blackrule[height=2cm,width=8cm,color=yellow]}
+\setlayer[before][x=5cm,y=.75ex]{\blackrule[height=8cm,width=2cm,color=orange]}
+\setupbackgrounds[text][background={behind,foreground,before}]
+
+
+\starttext
+\fakewords{200}{260}
+\page
+\fakewords{20}{30}
+\stoptext

@@ -1,0 +1,25 @@
+\usemodule[visual]
+
+\defineoverlay[behind][{\blackrule[height=2cm,width=8cm,color=yellow]}]
+\defineoverlay[before][{\blackrule[height=8cm,width=2cm,color=orange]}]
+\setupbackgrounds[page][background={behind,foreground,before}]
+
+
+\starttext
+\fakewords{200}{260}
+
+\page
+\setupbackgrounds[page][background=]
+\fakewords{200}{260}
+
+
+
+
+% \framed
+%   [width=10cm,
+%    height=10cm,
+%    background={color,behind,before,foreground},
+%    backgroundcolor=red]
+%   {AAA}
+
+\stoptext

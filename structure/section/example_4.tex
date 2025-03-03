@@ -1,0 +1,17 @@
+\usemodule[visual]
+
+\setuppapersize[B5]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\starttext
+% % % ================== 各级标题初认识 ==================
+% % % ================== 代码示例 - 4：层级间的特殊连接——更改chapter特征，title样式同样被更改
+
+\setuphead[chapter][page=no,textcolor=darkred]
+\chapter[chapterA]{Chapter A}
+\fakewords{10}{20}
+\title{Tite B}
+\fakewords{10}{20}
+
+\stoptext

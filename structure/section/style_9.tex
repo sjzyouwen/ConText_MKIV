@@ -1,0 +1,20 @@
+\usemodule[visual]
+
+\setuppapersize[B5]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+\starttext
+
+% % % ================== 各级标题样式的修改 ==================
+% % % ================== 代码示例 - 9：alternative
+
+\setuphead[chapter][page=no,alternative=reverse]
+\setuphead[section][alternative=middle]
+\setuphead[subsection][alternative=margin]
+
+\chapter[chapter1]{chapter reverse}
+\section{section middle}
+\subsection{subsection margin}
+\fakewords{30}{40}
+
+\stoptext

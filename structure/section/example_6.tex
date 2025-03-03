@@ -1,0 +1,19 @@
+\usemodule[visual]
+
+\setuppapersize[B5]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\starttext
+% % % ================== 各级标题初认识 ==================
+% % % ================== 代码示例 - 6：层级间的特殊连接——section到subsection的样式传递
+
+\setuphead[chapter][page=no,textcolor=darkred]
+\setuphead[section][page=no,textcolor=darkgreen]
+\chapter[chapterA]{Chapter A}
+\section[sectionA]{Section}
+\fakewords{10}{20}
+\subsection[sectionAA]{SectionAA}
+\fakewords{10}{20}
+
+\stoptext

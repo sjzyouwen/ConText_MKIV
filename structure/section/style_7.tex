@@ -1,0 +1,30 @@
+\usemodule[visual]
+
+\setuppapersize[B5]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\starttext
+
+% % % ================== 各级标题样式的修改 ==================
+% % % ================== 代码示例 - 7：更灵活的样式更改
+
+\define[2]\HeadTitle
+{\framed[frame=off,bottomframe=on,rulethickness=2pt,framecolor=darkgray,width=broad,align=flushleft]{#1\\\quad#2}}
+\setuphead[chapter][page=no,command=\HeadTitle]
+\setuphead[section][page=no]
+
+\chapter[chapter1]{Story A}
+\section{Part 1}
+\fakewords{30}{40}
+\section{Part 2}
+\fakewords{10}{30}
+\chapter[chapter2]{Story B}
+\section{Part 1}
+\fakewords{30}{50}
+\section{Part 2}
+\fakewords{20}{50}
+
+
+
+\stoptext

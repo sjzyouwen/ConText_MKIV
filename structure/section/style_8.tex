@@ -1,0 +1,32 @@
+\usemodule[visual]
+
+\setuppapersize[B5]
+\setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
+\setuppagenumbering[location={header,right},style=\bfb]
+
+\starttext
+
+% % % ================== 各级标题样式的修改 ==================
+% % % ================== 代码示例 - 8：Before & after
+
+% % chapter 标题前2cm的空白
+\setuphead[chapter][page=no,before=\blank[2cm,force]]
+% % section 标题后加长横线
+\setuphead[section][page=no,after={\hairline}]
+
+\chapter[chapter1]{Story A}
+\section{Part 1}
+\fakewords{30}{40}
+\section{Part 2}
+\fakewords{10}{30}
+\chapter[chapter2]{Story B}
+\section{Part 1}
+\fakewords{30}{50}
+\section{Part 2}
+\fakewords{20}{50}
+% % subsection同样继承section的某些特征
+\subsection{subPart 2} 
+\fakewords{20}{50}
+
+
+\stoptext

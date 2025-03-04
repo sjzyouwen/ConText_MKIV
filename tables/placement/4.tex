@@ -10,10 +10,9 @@
 
 \setupinterlinespace[line=3.66ex] %line=3.05ex相当于WORD 中的1.0倍行距, 3.66ex相当于WORD 中的1.2倍行距
 
-\setuppapersize[A4]
+\setuppapersize[B5]
 \setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
 \setuppagenumbering[location={header,right},style=\bfb]
-
 
 \startbuffer[fruits]
 \starttabulate[format=|ck2|ck2|ck2|]
@@ -28,12 +27,11 @@
 \stoptabulate
 \stopbuffer
 
+
 \starttext
 
-\fakenwords{60}{2}
-\placetable[here]{产品销量汇总表}{\getbuffer[fruits]}
-\fakenwords{60}{2}
-\page
+\fakenwords{20}{2}
+\placetable[90]{产品销量汇总表}{\getbuffer[fruits]}
 
 
 \stoptext

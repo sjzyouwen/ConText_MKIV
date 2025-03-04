@@ -14,82 +14,27 @@
 \setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
 \setuppagenumbering[location={header,right},style=\bfb]
 
-\define[1]\exampleLine{
-    \blank[10pt]
-    \framed[frame=off,align=flushleft,offset=3pt,strut=none,width=\textwidth,height=fit,background=color,backgroundcolor=gray]{{\bfx #1}}
-    \blank[5pt]
-}
-
-
-\startbuffer[fruita]
-\starttabulate[format=|c|c|c|]
+\startbuffer[fruits]
+\starttabulate[format=|ck2|ck2|ck2|]
 \HL
 \NC 年份 \NC 产品 \NC 销量 \NC\NR
 \HL
 \NC 2021 \NC 柚子 \NC 4500 \NC\NR
 \NC 2022 \NC 水蜜桃 \NC 480 \NC\NR
-\HL
-\stoptabulate
-\stopbuffer
-
-\starttext
-
-
-\startbuffer[fruitb]
-\starttabulate[format=|c|c|c|]
-\HL
-\NC 年份 \NC 产品 \NC 销量 \NC\NR
-\HL
 \NC 2023 \NC 柠檬 \NC 50 \NC\NR
 \NC 2024 \NC 蓝莓 \NC 930 \NC\NR
 \HL
 \stoptabulate
 \stopbuffer
 
-% % % ================== 代码示例 - 1
-\fakewords{60}{80}
 
-\startplacetable [location={none}]     % 设置最外层不显示表题
-  \startfloatcombination [nx=2,ny=1]
-\startplacetable[title=fruit A]
-{
-\getbuffer[fruita]
-}
-\stopplacetable
-\startplacetable[title=fruit B]
-{
-\getbuffer[fruitb]
-}
-\stopplacetable
-\stopfloatcombination
-\stopplacetable
+\starttext
 
-\fakewords{60}{80}
-
+\fakenwords{60}{2}
+\placetable[top]{产品销量汇总表}{\getbuffer[fruits]}
+\fakenwords{60}{2}
 \page
 
-% % % ================== 代码示例 - 2
-\fakewords{60}{80}
 
-\startplacetable[title=共享表序表题]
-  \startcombination [nx=2,ny=1]
-\startcontent
-\getbuffer[fruita]
-\stopcontent
-\startcaption
-fruit A
-\stopcaption
-
-\startcontent
-\getbuffer[fruitb]
-\stopcontent
-\startcaption
-fruit B
-\stopcaption
-
-\stopcombination
-\stopplacetable
-
-\fakewords{60}{80}
 
 \stoptext

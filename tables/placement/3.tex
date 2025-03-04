@@ -14,7 +14,6 @@
 \setuplayout[width=fit,height=fit,backspace=10mm,cutspace=10mm,topspace=10mm,margin=10mm,header=10mm,footer=10mm]
 \setuppagenumbering[location={header,right},style=\bfb]
 
-
 \startbuffer[fruits]
 \starttabulate[format=|ck2|ck2|ck2|]
 \HL
@@ -28,12 +27,11 @@
 \stoptabulate
 \stopbuffer
 
+
 \starttext
 
 \fakenwords{60}{2}
-\placetable[here]{产品销量汇总表}{\getbuffer[fruits]}
+\placetable[left]{产品销量汇总表}{\getbuffer[fruits]}
 \fakenwords{60}{2}
-\page
-
 
 \stoptext

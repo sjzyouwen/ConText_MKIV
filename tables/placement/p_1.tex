@@ -15,25 +15,48 @@
 \setuppagenumbering[location={header,right},style=\bfb]
 
 
-\startbuffer[fruits]
-\starttabulate[format=|ck2|ck2|ck2|]
+\startbuffer[fruita]
+\starttabulate[format=|c|c|c|]
 \HL
 \NC 年份 \NC 产品 \NC 销量 \NC\NR
 \HL
 \NC 2021 \NC 柚子 \NC 4500 \NC\NR
 \NC 2022 \NC 水蜜桃 \NC 480 \NC\NR
-\NC 2023 \NC 柠檬 \NC 50 \NC\NR
-\NC 2024 \NC 蓝莓 \NC 930 \NC\NR
 \HL
 \stoptabulate
 \stopbuffer
 
 \starttext
 
-\fakenwords{60}{2}
-\placetable[here]{产品销量汇总表}{\getbuffer[fruits]}
-\fakenwords{60}{2}
-\page
 
+\startbuffer[fruitb]
+\starttabulate[format=|c|c|c|]
+\HL
+\NC 年份 \NC 产品 \NC 销量 \NC\NR
+\HL
+\NC 2023 \NC 柠檬 \NC 50 \NC\NR
+\NC 2024 \NC 蓝莓 \NC 930 \NC\NR
+\HL
+\stoptabulate
+\stopbuffer
+
+\fakewords{60}{80}
+
+\startplacetable [location={none}]     % 设置最外层不显示表题
+  \startfloatcombination [nx=2,ny=1]
+\startplacetable[title=fruit A]
+{
+\getbuffer[fruita]
+}
+\stopplacetable
+\startplacetable[title=fruit B]
+{
+\getbuffer[fruitb]
+}
+\stopplacetable
+\stopfloatcombination
+\stopplacetable
+
+\fakewords{60}{80}
 
 \stoptext
